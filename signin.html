@@ -21,8 +21,8 @@
 
     <div class="container">
         <!--This is the sign in page  -->
-        <div class="row">
-            <div class="col-lg-12" id="signinPage">
+        <div class="row" id="loginPanel">
+            <div class="col-lg-12">
                 <h1 class="text-center">Nudge</h1>
                 <div class="col-lg-6 col-lg-offset-3">    
                     <div class="panel panel-primary">
@@ -33,7 +33,7 @@
                                 <input class="col-lg-offset-4" type="email" name="eml" placeholder="Email"><br><br>
                                 <input class="col-lg-offset-4" type="password" name="psw" placeholder="Password"><br><br>
                                 <input class="col-lg-offset-4 btn btn-primary" type="submit" name="Submit">
-                                <a href="placeholder"><input class="btn btn-primary" type="button" Value="Create Account"></a>
+                                <a href="placeholder"><input class="btn btn-primary" id="createAcc" type="button" Value="Create Account"></a>
                             </form>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <!-- this is the create a new account page -->
-            <div class="row">
+            <div class="row" id="createAccountPanel">
                 <div class="col-lg-12">
                     <h1 class="text-center">Nudge</h1>
                     <div class="col-lg-6 col-lg-offset-3">
@@ -77,6 +77,8 @@
     </footer>
     <!-- JavaScript -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/signinpage.js"></script>
+
 </body>
 
 </html>
