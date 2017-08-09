@@ -66,14 +66,9 @@ var signOut = function () {
 
 }
 
+function nudgeButton(){
 
-
-// Uses regex to get the value of keywords for API's
-$('#btn-nudge').on('click', function(){
   event.preventDefault();
-  console.log("CLick");
-
-  
 
   function weatherAPI() {
     var msgValue = $('#msg-input').val();
@@ -110,6 +105,7 @@ $('#btn-nudge').on('click', function(){
 
 // cut the last chbaracter off the string to just show the word
       var keyword = match.slice(0, match.length -1)
+      keyword.split(' ').join('+');
       console.log(keyword);
     }
 
@@ -117,6 +113,17 @@ $('#btn-nudge').on('click', function(){
     // console.log(match);
   };
 
+
+
   weatherAPI();
   gifAPI();
+}
+
+// Uses regex to get the value of keywords for API's
+$('#btn-nudge').on('click', nudgeButton);
+
+$("#msg-input").on('keyup', function (e) {
+    if (e.keyCode === 13) {
+      nudgeButton();
+    }
 });
