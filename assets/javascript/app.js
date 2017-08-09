@@ -65,3 +65,58 @@ var signOut = function () {
   // });
 
 }
+
+
+
+// Uses regex to get the value of keywords for API's
+$('#btn-nudge').on('click', function(){
+  event.preventDefault();
+  console.log("CLick");
+
+  
+
+  function weatherAPI() {
+    var msgValue = $('#msg-input').val();
+    var s = msgValue;
+
+
+    var rgxWeather = /(@weather\(.+\))+/gi;
+
+    if (rgxWeather.test(s)) {
+// cut string after 9 characters
+      var match = s.match(rgxWeather)[0].slice(9);
+
+// cut the last chbaracter off the string to just show the word
+      var keyword = match.slice(0, match.length -1)
+      keyword.split(' ').join('+');
+      console.log(keyword);
+
+    }
+
+
+    // console.log(match);
+  };
+
+  function gifAPI() {
+    var msgValue = $('#msg-input').val();
+    var s = msgValue;
+
+
+    var rgxGif = /(@gif\(.+\))+/gi;
+
+    if (rgxGif.test(s)) {
+// cut string after 6 characters
+      var match = s.match(rgxGif)[0].slice(5);
+
+// cut the last chbaracter off the string to just show the word
+      var keyword = match.slice(0, match.length -1)
+      console.log(keyword);
+    }
+
+
+    // console.log(match);
+  };
+
+  weatherAPI();
+  gifAPI();
+});
