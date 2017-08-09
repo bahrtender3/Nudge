@@ -1,54 +1,63 @@
 
-// Initialize Firebase ---------------------------------------
+// Initialize Firebase
 var config = {
-  apiKey: "AIzaSyBYe_ju295Nrb_OiL-P28nxg8aN4HUiQYk",
-  authDomain: "nudge-f8a04.firebaseapp.com",
-  databaseURL: "https://nudge-f8a04.firebaseio.com",
-  projectId: "nudge-f8a04",
-  storageBucket: "",
-  messagingSenderId: "146504874181"
+  apiKey: "AIzaSyBV3ktLWTPPn8UQuwQc2IBGwcuvWF5ucxc",
+  authDomain: "nudge-b7693.firebaseapp.com",
+  databaseURL: "https://nudge-b7693.firebaseio.com",
+  projectId: "nudge-b7693",
+  storageBucket: "nudge-b7693.appspot.com",
+  messagingSenderId: "462399864398"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
+
+console.log('current user', firebase.auth().currentUser);
 // Firebase ---------------------------------------------------
-
-// Get users Email and Password from the input fields on Login Screen
-  //Check to see if they are in the database
-    // Not in Database run
-
-      // firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-      //   // Handle Errors here.
-      //   var errorCode = error.code;
-      //   var errorMessage = error.message;
-      //   // ...
-      // });
-      //Prompt for Username and push to database as well as Email and Password
-      //update signed in status
-      //Take user to App page
+//signed in user variables
+var nameUser;
+var emailUser;
+var verifiedUser;
+var photoUser;
+var isAnonymousUser;
+var uidUser;
+var providerDataUser;
 
 
-    // If user does Exist
+firebase.auth().onAuthStateChanged(function (user) {
+  // [START_EXCLUDE silent]
+  // document.getElementById('quickstart-verify-email').disabled = true;
+  // [END_EXCLUDE]
+  console.log(user);
+  if (user) {
 
-      // firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-      //   // Handle Errors here.
-      //   var errorCode = error.code;
-      //   var errorMessage = error.message;
-      //   // ...
-      // });
-      //update signed in status
-      //Take user to App page
+      if (user) {
+        nameUser = user.displayName;
+        emailUser = user.email;
+        emailVerified = user.emailVerified;
+        photoURL = user.photoURL;
+        isAnonymous = user.isAnonymous;
+        uid = user.uid;
+        providerData = user.providerData;
+      };
 
-//When window closes run to log them out. 
-  // firebase.auth().signOut().then(function() {
-  //   // Sign-out successful.
-  // }).catch(function(error) {
-  //   // An error happened.
-  // });
+    // User is signed in.
+    console.log("Signed In");
+
+  } else {
+    // User is signed out.
+
+    console.log('Signed out');
+
+  }
+
+});
 
 
 
-var signOut = function(){
 
-return "Signing Out";
+var signOut = function () {
+
+  return "Signing Out";
   // firebase.auth().signOut().then(function() {
   //   // Sign-out successful.
   // }).catch(function(error) {
