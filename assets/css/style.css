@@ -5,3 +5,9 @@ li{
 	float: left;
 	padding: 0px 20px 0px 0px;
 }
+#online-peeps{
+	height: 500px;
+}
+#messagebox {
+	height: 360px;
+}
