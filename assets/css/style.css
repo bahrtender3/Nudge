@@ -28,6 +28,16 @@ li{
 textarea {
 	background-color: black;
 }
+
 .modal-content {
 	left: 500px; 
+
+.sender-message {
+	color: white;
+}
+hr {
+	color: grey;
+}
+.content-message {
+	margin-bottom: 8px;
 }
