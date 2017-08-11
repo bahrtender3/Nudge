@@ -16,6 +16,7 @@ li{
 }
 #messagebox {
 	height: 360px;
+	overflow-y: scroll;
 }
 #signoutBtn {
 	margin-top: 35px;
@@ -26,4 +27,7 @@ li{
 }
 textarea {
 	background-color: black;
+}
+.modal-content {
+	left: 500px; 
 }
