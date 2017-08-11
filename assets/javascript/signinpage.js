@@ -136,9 +136,8 @@ $(document).ready(function () {
 			console.log("Didn't Make account");
 			// [END_EXCLUDE]
 		});
-
-
-	}
+    }
+    
     /**
      * Sends an email verification to the user.
      */
