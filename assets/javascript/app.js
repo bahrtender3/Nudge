@@ -168,7 +168,7 @@ database.ref('Messages').on('child_added', function (snapshot) {
 });
 
 function addMessage(messageObject) {
-  console.log(messageObject);
+  // console.log(messageObject);
   var msgWrapper = $('<div>');
   msgWrapper.addClass('whole-message');
   var msgSender = $('<div>');
@@ -185,4 +185,14 @@ function addMessage(messageObject) {
 
 
 
+
 };
+
+
+
+
+$("#btn-help").on("click", function(){
+event.preventDefault();
+  $("#helpModal").modal('show');
+});
+
