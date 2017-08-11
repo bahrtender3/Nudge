@@ -31,6 +31,7 @@ textarea {
 
 .modal-content {
 	left: 500px; 
+	top: 250px;
 }
 .sender-message {
 	color: white;
