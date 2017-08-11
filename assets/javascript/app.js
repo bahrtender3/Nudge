@@ -82,7 +82,7 @@ function nudgeButton(){
       var match = s.match(rgxWeather)[0].slice(9);
 
 // cut the last chbaracter off the string to just show the word
-      var keyword = match.slice(0, match.length -1)
+      var keyword = match.slice(0, match.length -1);
       keyword.split(' ').join('+');
       console.log(keyword);
 
@@ -104,7 +104,7 @@ function nudgeButton(){
       var match = s.match(rgxGif)[0].slice(5);
 
 // cut the last chbaracter off the string to just show the word
-      var keyword = match.slice(0, match.length -1)
+      var keyword = match.slice(0, match.length -1);
       keyword.split(' ').join('+');
       console.log(keyword);
     }
