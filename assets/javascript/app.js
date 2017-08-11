@@ -86,8 +86,10 @@ function nudgeButton() {
       // cut string after 9 characters
       var match = s.match(rgxWeather)[0].slice(9);
 
-      // cut the last chbaracter off the string to just show the word
-      var keyword = match.slice(0, match.length - 1)
+
+// cut the last chbaracter off the string to just show the word
+      var keyword = match.slice(0, match.length -1);
+
       keyword.split(' ').join('+');
       console.log(keyword);
 
@@ -107,8 +109,11 @@ function nudgeButton() {
       // cut string after 6 characters
       var match = s.match(rgxGif)[0].slice(5);
 
+
+
       // cut the last chbaracter off the string to just show the word
       var keyword = match.slice(0, match.length - 1);
+
       keyword.split(' ').join('+');
       console.log(keyword);
     }
