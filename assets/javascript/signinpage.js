@@ -61,7 +61,10 @@ $(document).ready(function () {
 			}
 			// Sign in with email and pass.
 			// [START authwithemail]
-			firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+			firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
+
+				window.location.replace("index.html");
+			}).catch(function (error) {
 				// Handle Errors here.
 				var errorCode = error.code;
 				var errorMessage = error.message;
@@ -134,7 +137,7 @@ $(document).ready(function () {
 			// [END_EXCLUDE]
 		});
 
-		
+
 	}
     /**
      * Sends an email verification to the user.
