@@ -74,8 +74,8 @@ function nudgeButton() {
   event.preventDefault();
   var msgValue = $('#msg-input').val();
 
-
-  function weatherAPI() {
+  if(msgValue.charAt()[0]=== "@"){
+    function weatherAPI() {
 
     var s = msgValue;
 
@@ -86,22 +86,45 @@ function nudgeButton() {
       // cut string after 9 characters
       var match = s.match(rgxWeather)[0].slice(9);
 
-
-// cut the last chbaracter off the string to just show the word
+// cut the last character off the string to just show the word
       var keyword = match.slice(0, match.length -1);
 
       keyword.split(' ').join('+');
       console.log(keyword);
-
     }
+    // Adding in the Weather API:
+    weatherKey = "287114569e933aa0303d709cf76cf42d";
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + keyword + "&units=imperial&APPID=" + weatherKey;
 
+		// Creating an AJAX call for the weather. 
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).done(function(response){
+			console.log(response);
+      msgValue = ("The temperature in " + keyword + " is " + response.main.temp + " " + String.fromCharCode(176) + "f");
+      
+      database.ref('Messages').push({
 
-    // console.log(match);
+      text: msgValue,
+      sender: nameUser
+
+    });
+		})
   };
+  } else {
+    database.ref('Messages').push({
+
+    text: msgValue,
+    sender: nameUser
+
+    });
+  }
+
+
 
   function gifAPI() {
     var s = msgValue;
-
 
     var rgxGif = /(@gif\(.+\))+/gi;
 
@@ -109,34 +132,20 @@ function nudgeButton() {
       // cut string after 6 characters
       var match = s.match(rgxGif)[0].slice(5);
 
-
-
       // cut the last chbaracter off the string to just show the word
       var keyword = match.slice(0, match.length - 1);
 
       keyword.split(' ').join('+');
       console.log(keyword);
     }
-
-
     // console.log(match);
   };
 
-
-
-
-  weatherAPI();
   gifAPI();
+  weatherAPI();
 
-  database.ref('Messages').push({
-
-    text: msgValue,
-    sender: nameUser
-
-  });
 
 }
-
 
 $("#signoutBtn").on("click", function(){
   console.log("clicked");
