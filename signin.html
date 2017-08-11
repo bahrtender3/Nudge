@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nudge</title>
+    <title>Sign in | Nudge</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase Reference -->
     <script src="http://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Erica+One|Modak|Sigmar+One" rel="stylesheet">
 
     <!-- Moment.js Reference -->
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
@@ -26,15 +29,15 @@
             <div class="col-lg-12">
                 <h1 class="text-center">Nudge</h1>
                 <div class="col-lg-6 col-lg-offset-3">    
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading text-center">Sign Into Your Nudge Account</div>
                         <div class="panel-body">
                             <div> 
                                 <br>
                                 <input class="col-lg-offset-4" type="email" name="eml" placeholder="Email"><br><br>
                                 <input class="col-lg-offset-4" type="password" name="psw" placeholder="Password"><br><br>
-                                <input class="col-lg-offset-4 btn btn-primary" type="submit" name="Submit" id="signIn">
-                                <a href="placeholder"><input class="btn btn-primary" id="createAcc" type="button" Value="Create Account"></a>
+                                <input class="col-lg-offset-4 btn btn-default" type="submit" name="Submit" id="signIn">
+                                <a href="placeholder"><input class="btn btn-default" id="createAcc" type="button" Value="Create Account"></a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +49,7 @@
                 <div class="col-lg-12">
                     <h1 class="text-center">Nudge</h1>
                     <div class="col-lg-6 col-lg-offset-3">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-default">
                             <div class="panel-heading text-center">Create a Nudge Account</div>
                             <div class="panel-body">
                                 <div>
@@ -62,7 +65,7 @@
                                         <label for="inputPssword">Select Your Password</label>
                                         <input type="text" class="form-control" id="inputPassword" placeholder="Password">                                
                                     </div> 
-                                    <input type="submit" name="createAccount" class="btn btn-primary" id="createUser">                              
+                                    <input type="submit" name="createAccount" class="btn btn-default" id="createUser">                              
                                 </div>
                             </div>
                         </div>

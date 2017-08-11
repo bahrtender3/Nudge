@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Employee Tracker</title>
+    <title>Nudge</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <!-- Moment.js Reference -->
     <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Erica+One|Modak|Sigmar+One" rel="stylesheet">
 </head>
 
 <body>
@@ -24,13 +27,13 @@
             <div class="header">
                 <div class="row">
                     <h1 class="text-center col-lg-8 col-lg-offset-2">Nudge</h1>
-                    <button class="btn btn-primary col-lg-2" id="signoutBtn">Sign out</button>
+                    <button class="btn btn-default col-lg-2" id="signoutBtn">Sign out</button>
                 </div>
             </div>
         <div class="row">
             <!-- Online Now-->
             <div class="col-lg-3">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Online Now</h3>
                     </div>
@@ -42,7 +45,7 @@
             <div class="col-lg-9">
                 <!-- message area-->
                 <div class="row">
-                    <div class="panel panel-primary" id="messagebox">
+                    <div class="panel panel-default" id="messagebox">
                         <p class="text-center text-muted">Messages</p>
                         <div class="panel-body" id="msg-written">
                             <!-- Div where all the messages will be added. -->
@@ -51,7 +54,7 @@
                 </div>
                 <!-- message input  -->
                 <div class="row">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Type Message</h3>
                         </div>
@@ -66,12 +69,12 @@
                                     <div class="col-lg-2">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <button class="btn btn-primary btn-lg btn-block" id="btn-nudge" type="submit">Nudge</button>
+                                                <button class="btn btn-default btn-lg btn-block" id="btn-nudge" type="submit">Nudge</button>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <button class="btn btn-primary btn-md btn-block" id="btn-help">@</button>
+                                                <button class="btn btn-default btn-md btn-block" id="btn-help">@</button>
                                             </div>
                                         </div>
                                     </div>
