@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyBV3ktLWTPPn8UQuwQc2IBGwcuvWF5ucxc",
-  authDomain: "nudge-b7693.firebaseapp.com",
-  databaseURL: "https://nudge-b7693.firebaseio.com",
-  projectId: "nudge-b7693",
-  storageBucket: "nudge-b7693.appspot.com",
-  messagingSenderId: "462399864398"
+	apiKey: "AIzaSyBV3ktLWTPPn8UQuwQc2IBGwcuvWF5ucxc",
+	authDomain: "nudge-b7693.firebaseapp.com",
+	databaseURL: "https://nudge-b7693.firebaseio.com",
+	projectId: "nudge-b7693",
+	storageBucket: "nudge-b7693.appspot.com",
+	messagingSenderId: "462399864398"
 };
 firebase.initializeApp(config);
 // var database = firebase.database();
@@ -29,7 +29,7 @@ $(document).ready(function () {
 		handleSignUp();
 	});
 
-	$('#signIn').on('click', function(){
+	$('#signIn').on('click', function () {
 
 		toggleSignIn();
 	});
@@ -86,7 +86,7 @@ $(document).ready(function () {
 	function handleSignUp() {
 		email = $('#inputEmail').val();
 		password = $('#inputPassword').val();
-		username - $('#inputUserName').val();
+		username = $('#inputUserName').val();
 		if (email.length < 4) {
 			alert('Please enter an email address.');
 			return;
@@ -97,7 +97,30 @@ $(document).ready(function () {
 		}
 		// Sign in with email and pass.
 		// [START createwithemail]
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+		firebase.auth().createUserWithEmailAndPassword(email, password).then(function (response) {
+			console.log("response", response);
+			var user = firebase.auth().currentUser;
+
+			console.log(username);
+
+			user.updateProfile({
+				displayName: username
+				// photoURL: "https://example.com/jane-q-user/profile.jpg"
+			}).then(function () {
+				// Update successful.
+				console.log('update successful');
+				window.location.replace("index.html");
+			}).catch(function (error) {
+				console.log(error);
+				console.log("break");
+				// An error happened.
+			});
+
+			console.log(firebase.auth().currentUser);
+		}, function (errorResponse) {
+			console.log('errorResponse', errorResponse);
+		});
+		.catch(function (error) {
 			// Handle Errors here.
 			var errorCode = error.code;
 			var errorMessage = error.message;
@@ -111,17 +134,8 @@ $(document).ready(function () {
 			console.log("Didn't Make account");
 			// [END_EXCLUDE]
 		});
-		var user = firebase.auth().currentUser;
 
-		user.updateProfile({
-			displayName: username,
-			// photoURL: "https://example.com/jane-q-user/profile.jpg"
-		}).then(function () {
-			// Update successful.
-		}).catch(function (error) {
-			// An error happened.
-		});
-		// [END createwithemail]
+		[END createwithemail]
 	}
     /**
      * Sends an email verification to the user.
@@ -182,7 +196,7 @@ $(document).ready(function () {
 				providerData = user.providerData;
 
 				console.log("Signed In");
-				window.location.replace("index.html");
+				// window.location.replace("index.html");
 
 				// Console.log(JSON.stringify(user, null, '  '));
 				// Use the following code if we want to verify emails in the future
