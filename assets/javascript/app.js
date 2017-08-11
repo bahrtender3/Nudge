@@ -39,9 +39,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     uid = user.uid;
     providerData = user.providerData;
 
-// var user = firebase.auth().currentUser;
-
-  
+// var user = firebase.auth().currentUser;  
 
     // User is signed in.
     console.log("Signed In");
@@ -54,9 +52,6 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 
 });
-
-
-
 
 var signOut = function () {
 
@@ -72,6 +67,7 @@ var signOut = function () {
 function nudgeButton() {
 
   event.preventDefault();
+
   var msgValue = $('#msg-input').val();
 
   if(msgValue.charAt()[0]=== "@"){
@@ -122,6 +118,8 @@ function nudgeButton() {
   }
 
 
+  // Clear the text from the user's input field. 
+  $("#msg-input").val("");
 
   function gifAPI() {
     var s = msgValue;
@@ -143,7 +141,6 @@ function nudgeButton() {
 
   gifAPI();
   weatherAPI();
-
 
 }
 
@@ -183,13 +180,7 @@ function addMessage(messageObject) {
   msgWrapper.append(msgContent);
   $('#msg-written').append(msgWrapper);
 
-
-
-
 };
-
-
-
 
 $("#btn-help").on("click", function(){
 event.preventDefault();
