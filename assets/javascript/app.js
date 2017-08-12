@@ -68,6 +68,8 @@ function nudgeButton() {
 
   event.preventDefault();
 
+  updateScroll();
+
   var msgValue = $('#msg-input').val();
 
   if(msgValue.charAt()[0]=== "@"){
@@ -186,4 +188,9 @@ $("#btn-help").on("click", function(){
 event.preventDefault();
   $("#helpModal").modal('show');
 });
+
+function updateScroll() {
+  var element = document.getElementById("messagebox");
+  element.scrollTop = element.scrollHeight;
+};
 
