@@ -92,7 +92,7 @@ function nudgeButton() {
     }
     // Adding in the Weather API:
     weatherKey = "287114569e933aa0303d709cf76cf42d";
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + keyword + "&units=imperial&APPID=" + weatherKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + keyword + "&units=imperial&APPID=" + weatherKey;
 
 		// Creating an AJAX call for the weather. 
 		$.ajax({
